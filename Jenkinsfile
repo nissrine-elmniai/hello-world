@@ -1,8 +1,10 @@
 pipeline {
     agent any
-       tools {
-        jdk 'JDK11'  // Configurez un JDK dans Jenkins > Global Tool Configuration
+    
+    tools {
+        jdk 'JDK11'  
     }
+    
     stages {
         stage('Checkout') {
             steps {
@@ -12,37 +14,37 @@ pipeline {
 
         stage('Compile HelloWorld') {
             steps {
-                sh 'javac HelloWorld.java'
+                bat 'javac HelloWorld.java'   // sh → bat
             }
         }
 
         stage('Run HelloWorld') {
             steps {
-                sh 'java HelloWorld'
+                bat 'java HelloWorld'         // sh → bat
             }
         }
 
         stage('Compile Merci') {
             steps {
-                sh 'javac Merci.java'
+                bat 'javac Merci.java'        // sh → bat
             }
         }
 
         stage('Run Merci') {
             steps {
-                sh 'java Merci'
+                bat 'java Merci'              // sh → bat
             }
         }
 
         stage('Compile DeRien') {
             steps {
-                sh 'javac DeRien.java'
+                bat 'javac DeRien.java'       // sh → bat
             }
         }
 
         stage('Run DeRien') {
             steps {
-                sh 'java DeRien'
+                bat 'java DeRien'             // sh → bat
             }
         }
     }
