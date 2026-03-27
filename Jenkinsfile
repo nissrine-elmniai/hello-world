@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+       tools {
+        jdk 'JDK11'  // Configurez un JDK dans Jenkins > Global Tool Configuration
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -10,7 +12,7 @@ pipeline {
 
         stage('Compile HelloWorld') {
             steps {
-                sh 'java HelloWorld.java'
+                sh 'javac HelloWorld.java'
             }
         }
 
