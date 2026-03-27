@@ -10,9 +10,9 @@ pipeline {
 
         stage('Compile HelloWorld') {
             steps {
-                sh 'javac HelloWorld.java'
+                sh 'java HelloWorld.java'
             }
-        }
+        
 
         stage('Run HelloWorld') {
             steps {
@@ -22,7 +22,7 @@ pipeline {
 
         stage('Compile Merci') {
             steps {
-                sh 'javac Merci.java'
+                sh 'java Merci.java'
             }
         }
 
