@@ -1,24 +1,45 @@
 pipeline {
     agent any
+
     stages {
-        stage('Hello World') {
+        stage('Checkout') {
             steps {
-                // Compilation et exécution de HelloWorld
+                git branch: 'main', url: 'https://github.com/nissrine-elmniai/hello-world.git'
+            }
+        }
+
+        stage('Compile HelloWorld') {
+            steps {
                 bat 'javac HelloWorld.java'
+            }
+        }
+
+        stage('Run HelloWorld') {
+            steps {
                 bat 'java HelloWorld'
             }
         }
-        stage('Merci') {
+
+        stage('Compile Merci') {
             steps {
-                // Compilation et exécution de Merci
                 bat 'javac Merci.java'
+            }
+        }
+
+        stage('Run Merci') {
+            steps {
                 bat 'java Merci'
             }
         }
-        stage('DeRien') {
+
+        stage('Compile DeRien') {
             steps {
-                // Compilation et exécution de DeRien
                 bat 'javac DeRien.java'
+            }
+        }
+
+        stage('Run DeRien') {
+            steps {
                 bat 'java DeRien'
             }
         }
